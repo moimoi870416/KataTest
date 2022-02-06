@@ -39,5 +39,13 @@ namespace KataTest
             sum /= numbers.Length;
             return ChangeTypeDictionary.FirstOrDefault(x => x.Value == sum).Key;
         }
+        public int DeadAntCount(string ants)
+        {
+            if (string.IsNullOrEmpty(ants)) return 0;
+            return
+                ants.Split("ant")
+                    .Select(x => x.AsEnumerable().Count(y => y == 'a'))
+                    .Sum(x => x);
+        }
     }
 }

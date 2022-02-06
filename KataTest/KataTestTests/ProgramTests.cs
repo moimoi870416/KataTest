@@ -29,5 +29,35 @@ namespace KataTest.Tests
 
             Assert.AreEqual("n/a", Program.StringAverage("two apple"));
         }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_null_return_zero()
+        {
+            Assert.AreEqual(0, Program.DeadAntCount(null));
+        }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_antantant_return_zero()
+        {
+            Assert.AreEqual(0, Program.DeadAntCount("ant ant ant"));
+        }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_ant_return_one()
+        {
+            Assert.AreEqual(1, Program.DeadAntCount("a n t"));
+        }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_aaannnttt_return_three()
+        {
+            Assert.AreEqual(3, Program.DeadAntCount("a a a  nnn tt t"));
+        }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_antananttaantnt_return_two()
+        {
+            Assert.AreEqual(2, Program.DeadAntCount("ant anantt aantnt"));
+        }
+        [TestMethod()]
+        public void DeadAntCountTest_enter_antananttaantnt_return_three()
+        {
+            Assert.AreEqual(3, Program.DeadAntCount("ant ana ntt aantnt"));
+        }
     }
 }
